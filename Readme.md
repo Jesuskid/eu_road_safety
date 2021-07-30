@@ -134,4 +134,5 @@ if __name__ == '__main__':
     app.run_server(debug=True)
 ```
 
-Now you have the proportion of road mortatility for each european country in the data set.
+Now you have the proportion of road mortatility for each european country in the data set. You
+can edit it to get more charts.
