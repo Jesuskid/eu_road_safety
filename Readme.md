@@ -8,6 +8,7 @@ variables like vehicle ownership, population density, country etc.
 - Python >= 3.9
 - bs4(BeautifulSoup) >= 0.0.1
 -pandas >= 1.3.1
+
 *For visualization only*
 - dash >= 1.21.0
 - plotly >= 5.1.0
