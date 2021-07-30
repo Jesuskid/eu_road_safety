@@ -1,1 +1,1 @@
-web: gunicorn visualize.py:server
+web: gunicorn visualize:server
