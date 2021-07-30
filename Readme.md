@@ -1,4 +1,7 @@
-
+##Introduction
+This data set is sourced from Wikipedia, and it shows
+the number of Road accidents resulting in deaths occurring in europe relative to other 
+variables like vehicle ownership, population density, country etc.
 ## Installation
 
 **Installation Requirements**
@@ -15,7 +18,7 @@
 
 Here's a quick run of how to use this script to get the data on 
 [Road_safety_in_Europe](https://en.wikipedia.org/wiki/Road_safety_in_Europe). From Wikidpedia
-# Run this app with `python main.py` and
+###Run this app with `python main.py` and
 
 1. Import the libraries
   ```python
@@ -25,22 +28,22 @@ Here's a quick run of how to use this script to get the data on
 
   ```
 
-2. Get the Data from Wikipedia using Html requests and bs4(BeautifulSoup)
-	```python
-	response = requests.get('https://en.wikipedia.org/wiki/Road_safety_in_Europe')
-	url = response.text
-	soup = BeautifulSoup(url, 'html.parser')
-	
-	table = soup.find(class_='wikitable sortable')
-   ```
+2.Get the Data from Wikipedia using Html requests and bs4(BeautifulSoup)
+```python
+response = requests.get('https://en.wikipedia.org/wiki/Road_safety_in_Europe')
+url = response.text
+soup = BeautifulSoup(url, 'html.parser')
+
+table = soup.find(class_='wikitable sortable')
+```
 3. Convert the data into a dataFrame
-	```python
-	df = pd.read_html(table.prettify())			
-	```
+```python
+df = pd.read_html(table.prettify())			
+```
 4.Transform and clean the data 
   Eliminate columns not used and change column names and create a new dataframe
 ```python
-  	new_df = df[0].rename(columns={
+new_df = df[0].rename(columns={
     'Country': 'Country',
     'Area  (thousands of km  2  )  [24]': 'Area',
     'Population in 2018  [25]': 'Population',
@@ -78,8 +81,8 @@ sorted_df.to_csv("myfile.csv", index=False)
 
 ##Lets Visualize the data with dash(use the viuslize script)
 
-# Run this app with `python visualize.py` and
-# visit http://127.0.0.1:8050/ in your web browser.
+###Run this app with `python visualize.py` and
+####visit http://127.0.0.1:8050/ in your web browser.
 
 1. Import the libraries
 ```python
