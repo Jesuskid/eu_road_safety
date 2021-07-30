@@ -27,22 +27,19 @@ Here's a quick run of how to use this script to get the data on
 
 2. Get the Data from Wikipedia using Html requests and bs4(BeautifulSoup)
 	```python
-response = requests.get('https://en.wikipedia.org/wiki/Road_safety_in_Europe')
-url = response.text
-soup = BeautifulSoup(url, 'html.parser')
-
-table = soup.find(class_='wikitable sortable')
-
-```
-
+	response = requests.get('https://en.wikipedia.org/wiki/Road_safety_in_Europe')
+	url = response.text
+	soup = BeautifulSoup(url, 'html.parser')
+	
+	table = soup.find(class_='wikitable sortable')
+   ```
 3. Convert the data into a dataFrame
 	```python
 	df = pd.read_html(table.prettify())			
 	```
 4.Transform and clean the data 
   Eliminate columns not used and change column names and create a new dataframe
-
-	```python
+```python
   	new_df = df[0].rename(columns={
     'Country': 'Country',
     'Area  (thousands of km  2  )  [24]': 'Area',
@@ -59,8 +56,7 @@ new_df.drop(['Road Network Length  (in km) in 2013  [29]',
              'Number of People Killed  per Billion km  [30]',
              'Number of Seriously Injured in 2017/2018  [30]'],
             axis=1, inplace=True)
-			
-	```
+```
 5. Create and insert the year column
 ```python
 year_column = [2018 for i in range(29)]
