@@ -8,7 +8,7 @@ import pandas as pd
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app=Dash(__name__, external_stylesheets=external_stylesheets)
-
+server=app.server
 df = pd.read_csv('European_Union_Road_Safety.csv')
 df2 = pd.read_csv('European_Union_Road_Safety.csv')
 
